@@ -1,5 +1,8 @@
 # GAV-Learn
+In this repository we include the datasets that are used in the experiments of the following PODS 2018 paper:
 
-Data Examples used in the experiments of the PODS 2018 paper "Active Learning of GAV Schema Mappings" will be available soon. 
+"Active Learning of GAV Schema Mappings"
+
+Under construction...
 
 
