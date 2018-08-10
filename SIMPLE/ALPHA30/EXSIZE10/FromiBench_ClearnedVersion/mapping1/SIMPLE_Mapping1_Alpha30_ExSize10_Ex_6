@@ -1,0 +1,93 @@
+
+************ Parsed Mapping Scneario *************
+sourceSchema:
+{
+# relations = 14
+test_cp_1_nl0_ce0(nut_cp_1_nl0_ae0ke0,art_cp_1_nl0_ae1ke1,slope_cp_1_nl0_ae2)
+cheese_me_1_nl0_ce0(measure_me_1_nl0_ae0,touch_me_1_nl0_ae0comp1_joinref_0,touch_me_1_nl0_ae0comp2_joinref_0)
+demand_me_1_nl0_ce1(society_me_1_nl1_ae0,compare_me_1_nl1_ae1,branch_me_1_nl0_ae0comp1_joinattr_0)
+different_me_1_nl0_ce2(great_me_1_nl2_ae0,board_me_1_nl2_ae1,affect_me_1_nl0_ae0comp2_joinattr_0)
+red_me_2_nl0_ce0(wrong_me_2_nl0_ae0,tail_me_2_nl0_ae0comp1_joinref_0,tail_me_2_nl0_ae0comp2_joinref_0)
+past_me_2_nl0_ce1(wheel_me_2_nl1_ae0,work_me_2_nl1_ae1,tail_me_2_nl0_ae0comp1_joinattr_0)
+letter_me_2_nl0_ce2(blue_me_2_nl2_ae0,describe_me_2_nl2_ae1,tail_me_2_nl0_ae0comp2_joinattr_0)
+report_dl_2_nl0_ce0(night_dl_2_nl0_ae0ke0,find_dl_2_nl0_ae0ke1,different_dl_2_nl0_ae2,reveal_dl_2_nl0_ae3)
+oven_cp_3_nl0_ce0(narrow_cp_3_nl0_ae0ke0,rest_cp_3_nl0_ae1ke1,place_cp_3_nl0_ae2)
+thank_me_3_nl0_ce1(expansion_me_3_nl1_ae0,pipe_me_3_nl1_ae1,indicate_me_3_nl0_ae0comp1_joinattr_0)
+order_dl_3_nl0_ce0(twist_dl_3_nl0_ae0ke0,account_dl_3_nl0_ae0ke1,mixed_dl_3_nl0_ae2,small_dl_3_nl0_ae3,broken_dl_3_nl0_ae4,brain_dl_3_nl0_ae5,branch_dl_3_nl0_ae6,swim_dl_3_nl0_ae7)
+approval_me_4_nl0_ce0(blow_me_4_nl0_ae0,place_me_4_nl0_ae0comp1_joinref_0,place_me_4_nl0_ae0comp2_joinref_0)
+division_me_4_nl0_ce1(ready_me_4_nl1_ae0,property_me_4_nl1_ae1,place_me_4_nl0_ae0comp1_joinattr_0)
+gun_me_4_nl0_ce2(winter_me_4_nl2_ae0,powder_me_4_nl2_ae1,place_me_4_nl0_ae0comp2_joinattr_0)
+}
+targetSchema:
+{
+# relations = 5
+test_cp_1_nl0_ce0copy1_0(nut_cp_1_nl0_ae0ke0,art_cp_1_nl0_ae1ke1,slope_cp_1_nl0_ae2)
+society_me_1_nl0_ce0(measure_me_1_nl0_ae0,society_me_1_nl1_ae0,compare_me_1_nl1_ae1,great_me_1_nl2_ae0,board_me_1_nl2_ae1,branch_me_1_nl0_ae0comp1_joinattr_0,affect_me_1_nl0_ae0comp2_joinattr_0)
+warn_dl_1_nl0_ce0(great_me_1_nl2_ae0,board_me_1_nl2_ae1)
+cheese_me_1_nl0_ce0copy2_1(measure_me_1_nl0_ae0,touch_me_1_nl0_ae0comp1_joinref_0,touch_me_1_nl0_ae0comp2_joinref_0)
+stick_me_3_nl0_ce0(great_me_1_nl2_ae0,expansion_me_3_nl1_ae0,pipe_me_3_nl1_ae1,wheel_me_2_nl1_ae0,work_me_2_nl1_ae1,indicate_me_3_nl0_ae0comp1_joinattr_0,tail_me_2_nl0_ae0comp1_joinattr_0)
+}
+goalMapping:
+{
+[ test_cp_1_nl0_ce0(x1,x2,x3)  -> test_cp_1_nl0_ce0copy1_0(x1,x2,x3) ; datasourceTag=221];
+[ red_me_2_nl0_ce0(x1,x2,x3) & past_me_2_nl0_ce1(x4,x5,x2) & letter_me_2_nl0_ce2(x6,x7,x3)  -> society_me_1_nl0_ce0(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=225];
+[ order_dl_3_nl0_ce0(x1,x2,x3,x4,x5,x6,x7,x8)  -> society_me_1_nl0_ce0(x1,x2,x3,x4,x5,x6,x7) ; datasourceTag=229];
+[ approval_me_4_nl0_ce0(x1,x2,x3) & division_me_4_nl0_ce1(x4,x5,x2) & gun_me_4_nl0_ce2(x6,x7,x3)  -> stick_me_3_nl0_ce0(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=230];
+[ cheese_me_1_nl0_ce0(x1,x2,x3)  -> cheese_me_1_nl0_ce0copy2_1(x1,x2,x3) ; datasourceTag=224];
+[ oven_cp_3_nl0_ce0(x1,x2,x3)  -> cheese_me_1_nl0_ce0copy2_1(x1,x2,x3) ; datasourceTag=227];
+[ cheese_me_1_nl0_ce0(x1,x2,x3) & demand_me_1_nl0_ce1(x4,x5,x2) & different_me_1_nl0_ce2(x6,x7,x3)  -> society_me_1_nl0_ce0(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=222];
+[ different_me_1_nl0_ce2(x1,x2,x3)  -> warn_dl_1_nl0_ce0(x1,x2) ; datasourceTag=223];
+[ report_dl_2_nl0_ce0(x1,x2,x3,x4)  -> cheese_me_1_nl0_ce0copy2_1(x1,x2,x3) ; datasourceTag=226];
+[ different_me_1_nl0_ce2(x1,x2,x3) & thank_me_3_nl0_ce1(x4,x5,x2) & past_me_2_nl0_ce1(x6,x7,x3)  -> stick_me_3_nl0_ce0(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=228];
+}
+Parameter Settings:
+{
+nbrOfCopying=3
+nbrOfMerging=4
+nbrOfSelfJoin=0
+nbrOfProjection=3
+nbrOfJoinSize=3
+reuseSource=100
+reuseTarget=100
+}
+goalMapping_readable:
+{
+[ A1(x1,x2,x3)  -> A2(x1,x2,x3) ; datasourceTag=];
+[ A3(x1,x2,x3) & A4(x4,x5,x2) & A5(x6,x7,x3)  -> A6(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=];
+[ A7(x1,x2,x3,x4,x5,x6,x7,x8)  -> A6(x1,x2,x3,x4,x5,x6,x7) ; datasourceTag=];
+[ A8(x1,x2,x3) & A9(x4,x5,x2) & A10(x6,x7,x3)  -> B0(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=];
+[ B1(x1,x2,x3)  -> B2(x1,x2,x3) ; datasourceTag=];
+[ B3(x1,x2,x3)  -> B2(x1,x2,x3) ; datasourceTag=];
+[ B1(x1,x2,x3) & B4(x4,x5,x2) & B5(x6,x7,x3)  -> A6(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=];
+[ B5(x1,x2,x3)  -> B6(x1,x2) ; datasourceTag=];
+[ B7(x1,x2,x3,x4)  -> B2(x1,x2,x3) ; datasourceTag=];
+[ B5(x1,x2,x3) & B8(x4,x5,x2) & A4(x6,x7,x3)  -> B0(x1,x4,x5,x6,x7,x2,x3) ; datasourceTag=];
+}
+sourceFactsByRelation:
+{
+	past_me_2_nl0_ce1: [past_me_2_nl0_ce1(boisthear,mis,compactgre), past_me_2_nl0_ce1(anguish,tria,ma), past_me_2_nl0_ce1(wher,troublou,unconfir), past_me_2_nl0_ce1(revolt,funenclos,w), past_me_2_nl0_ce1(su,embraceme,vergesti)]
+	branch_me_4_nl0_ce0: [branch_me_4_nl0_ce0(ab,brando,noviacre), branch_me_4_nl0_ce0(d,vi,flow), branch_me_4_nl0_ce0(muttonsou,compassi,noviacre), branch_me_4_nl0_ce0(scambli,sinceri,flow), branch_me_4_nl0_ce0(marti,unit,tra)]
+	letter_me_2_nl0_ce2: [letter_me_2_nl0_ce2(crash,proceed,properlyc), letter_me_2_nl0_ce2(piet,cutpu,peaceably), letter_me_2_nl0_ce2(end,inc,strugglec), letter_me_2_nl0_ce2(marri,thatsafel,obs), letter_me_2_nl0_ce2(bark,inte,fileddecei)]
+	report_dl_2_nl0_ce0: [report_dl_2_nl0_ce0(ba,title,untrie,kenneldank), report_dl_2_nl0_ce0(unnumberdo,crossnes,clothierim,al), report_dl_2_nl0_ce0(sh,rampant,accomp,decayedhi), report_dl_2_nl0_ce0(surpriswh,fang,axeconj,i), report_dl_2_nl0_ce0(ancho,de,por,napmillhi)]
+	mixed_me_3_nl0_ce1: [mixed_me_3_nl0_ce1(toppingf,gir,props), mixed_me_3_nl0_ce1(wrapssign,thwarte,targets), mixed_me_3_nl0_ce1(abuserdefe,d,dista), mixed_me_3_nl0_ce1(reserv,befal,s), mixed_me_3_nl0_ce1(surlyke,fas,re)]
+	red_me_2_nl0_ce0: [red_me_2_nl0_ce0(wa,ma,obs), red_me_2_nl0_ce0(besott,unconfir,strugglec), red_me_2_nl0_ce0(sac,w,properlyc), red_me_2_nl0_ce0(remain,compactgre,fileddecei), red_me_2_nl0_ce0(loyal,vergesti,peaceably)]
+	test_cp_1_nl0_ce0: [test_cp_1_nl0_ce0(fa,embr,actions), test_cp_1_nl0_ce0(gur,usurpe,ha), test_cp_1_nl0_ce0(enclou,strai,faintedmu), test_cp_1_nl0_ce0(hearkensi,shepherd,da), test_cp_1_nl0_ce0(detect,imperious,voiceg)]
+	oven_cp_3_nl0_ce0: [oven_cp_3_nl0_ce0(weetdas,so,ma), oven_cp_3_nl0_ce0(p,monkth,cha), oven_cp_3_nl0_ce0(lanthor,neroconf,meth), oven_cp_3_nl0_ce0(profanati,allusion,h), oven_cp_3_nl0_ce0(manet,da,neb)]
+	stick_cp_3_nl0_ce0: [stick_cp_3_nl0_ce0(volume,co), stick_cp_3_nl0_ce0(bu,dildc), stick_cp_3_nl0_ce0(relation,idenca), stick_cp_3_nl0_ce0(sed,empressvil), stick_cp_3_nl0_ce0(ar,foreigner)]
+	cheese_me_1_nl0_ce0: [cheese_me_1_nl0_ce0(ronyonur,equivocati,ma), cheese_me_1_nl0_ce0(bes,ph,w), cheese_me_1_nl0_ce0(ho,ab,compactgre), cheese_me_1_nl0_ce0(prai,dorsetr,vergesti), cheese_me_1_nl0_ce0(phrynia,agreein,vergesti)]
+	demand_me_1_nl0_ce1: [demand_me_1_nl0_ce1(bugpa,plungedev,ab), demand_me_1_nl0_ce1(assistant,mischief,equivocati), demand_me_1_nl0_ce1(bubbleg,co,ph), demand_me_1_nl0_ce1(forc,amiab,dorsetr), demand_me_1_nl0_ce1(helenuspr,sc,agreein)]
+	approval_me_4_nl0_ce0: [approval_me_4_nl0_ce0(abili,graz,aiml), approval_me_4_nl0_ce0(monignora,tra,re), approval_me_4_nl0_ce0(ev,hate,spidersro), approval_me_4_nl0_ce0(pinf,dwarfi,spidersro), approval_me_4_nl0_ce0(lamoundco,nieceforn,scarea)]
+	division_me_4_nl0_ce1: [division_me_4_nl0_ce1(annoyanc,vellheave,nieceforn), division_me_4_nl0_ce1(bak,zon,dwarfi), division_me_4_nl0_ce1(todayunt,warblee,graz), division_me_4_nl0_ce1(hu,howling,tra), division_me_4_nl0_ce1(ov,gran,hate)]
+	thank_me_3_nl0_ce1: [thank_me_3_nl0_ce1(embattleso,c,unlikepo), thank_me_3_nl0_ce1(zod,se,quifirma), thank_me_3_nl0_ce1(forth,secretsse,spiessa), thank_me_3_nl0_ce1(voltmar,sou,elve), thank_me_3_nl0_ce1(grosslyhea,pr,sojour)]
+	place_me_4_nl0_ce1: [place_me_4_nl0_ce1(memorialj,p,unit), place_me_4_nl0_ce1(ho,dispraise,sinceri), place_me_4_nl0_ce1(wo,choppe,vi), place_me_4_nl0_ce1(ja,demands,brando), place_me_4_nl0_ce1(genitivot,b,compassi)]
+	gun_me_4_nl0_ce2: [gun_me_4_nl0_ce2(gallowsba,p,scarea), gun_me_4_nl0_ce2(parado,butc,spidersro), gun_me_4_nl0_ce2(dolorou,indisti,aiml), gun_me_4_nl0_ce2(her,concerna,re), gun_me_4_nl0_ce2(brokenwi,contended,raze)]
+	division_me_4_nl0_ce2: [division_me_4_nl0_ce2(ball,droop,yeoman), division_me_4_nl0_ce2(preser,cheapcond,tra), division_me_4_nl0_ce2(vaunte,whe,noviacre), division_me_4_nl0_ce2(m,shr,flow), division_me_4_nl0_ce2(preferch,aroused,robesowc)]
+	discover_dl_2_nl0_ce0: [discover_dl_2_nl0_ce0(hookingsu,allaypal,solidap,hi,transpor,redre,impositio,pr), discover_dl_2_nl0_ce0(puzz,udd,hereinswi,gemi,madsgl,un,cour,tempor), discover_dl_2_nl0_ce0(ob,farewellw,beacheds,faintove,qu,arous,consolati,roundlyra), discover_dl_2_nl0_ce0(butcher,po,desir,slidingol,restoresth,artssmoth,playsunnat,ashyunki), discover_dl_2_nl0_ce0(wrench,miching,hea,wate,hung,cours,pulpiter,expedi)]
+	tail_cp_2_nl0_ce0: [tail_cp_2_nl0_ce0(co,codprofes,af), tail_cp_2_nl0_ce0(reekedvaul,storybu,corn), tail_cp_2_nl0_ce0(siliu,fiercene,majes), tail_cp_2_nl0_ce0(pipe,fro,there), tail_cp_2_nl0_ce0(detest,ga,har)]
+	find_me_2_nl0_ce2: [find_me_2_nl0_ce2(mount,requ,wondro), find_me_2_nl0_ce2(gov,crit,foreg), find_me_2_nl0_ce2(differenc,wipevarn,fi), find_me_2_nl0_ce2(offici,leaving,an), find_me_2_nl0_ce2(out,he,labouri)]
+	different_me_1_nl0_ce2: [different_me_1_nl0_ce2(fou,elve,unconfir), different_me_1_nl0_ce2(channels,unlikepo,compactgre), different_me_1_nl0_ce2(diablecoz,spiessa,w), different_me_1_nl0_ce2(indignsca,spiessa,vergesti), different_me_1_nl0_ce2(millions,spiessa,ma)]
+	blue_me_2_nl0_ce1: [blue_me_2_nl0_ce1(bobdisce,r,neatlyherc), blue_me_2_nl0_ce1(revolvin,s,c), blue_me_2_nl0_ce1(directio,deserves,ordinaryh), blue_me_2_nl0_ce1(rooksmein,herbintemp,sneapi), blue_me_2_nl0_ce1(father,sight,archb)]
+	order_dl_3_nl0_ce0: [order_dl_3_nl0_ce0(rings,wee,torturehi,ciste,unworthi,withho,selli,petterunpo), order_dl_3_nl0_ce0(comfortdr,stairhosti,trodc,bit,slugmote,pr,succeeder,whip), order_dl_3_nl0_ce0(roman,religi,fastingtis,rich,vi,tenu,acc,courtsboa), order_dl_3_nl0_ce0(contumel,runscoze,unk,fam,blusterodo,abodeveri,jo,landmenal), order_dl_3_nl0_ce0(seeming,namweap,garlan,roir,whir,reputati,spr,blo)]
+
+}
+**************************************************
